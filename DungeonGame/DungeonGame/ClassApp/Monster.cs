@@ -8,6 +8,7 @@ namespace DungeonGame.ClassApp
 {
     public class Monster
     {
+        //класс содержит инфу о хп монстра и хранит сво-во
         public int Health { get; set; }
         public Monster(int health)
         {

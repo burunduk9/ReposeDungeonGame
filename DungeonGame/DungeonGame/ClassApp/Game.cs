@@ -8,23 +8,26 @@ namespace DungeonGame.ClassApp
 {
     public class Game
     {
+        //базовые статы перса, и не только перса, при запуске игры
         private Player player;
         private Room[] dungeonMap;
         private Random random;
         public Game()
         {
+            //создание игрока и начало
             random = new Random();
             player = new Player();
             InitializeDungeon();
         }
         private void InitializeDungeon()
         {
+            //создание комнат подземелья 
             dungeonMap = new Room[10];
             for (int i = 0; i < 9; i++)
             {
-                dungeonMap[i] = new Room(random.Next(4)); // Randomly assign events to rooms
+                dungeonMap[i] = new Room(random.Next(4)); // рандомайзер
             }
-            dungeonMap[9] = new Room(4); // Boss room
+            dungeonMap[9] = new Room(4); // комната босса 
         }
 
         public void Start()

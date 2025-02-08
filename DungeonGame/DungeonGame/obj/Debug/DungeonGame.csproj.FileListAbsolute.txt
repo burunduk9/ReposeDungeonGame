@@ -1,0 +1,3 @@
+C:\Users\misba\OneDrive\Рабочий стол\zadanieRPM\DungeonGame\DungeonGame\obj\Debug\DungeonGame.csproj.AssemblyReference.cache
+C:\Users\misba\OneDrive\Рабочий стол\zadanieRPM\DungeonGame\DungeonGame\obj\Debug\DungeonGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\misba\OneDrive\Рабочий стол\zadanieRPM\DungeonGame\DungeonGame\obj\Debug\DungeonGame.csproj.CoreCompileInputs.cache

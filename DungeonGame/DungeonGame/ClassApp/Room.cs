@@ -8,14 +8,16 @@ namespace DungeonGame.ClassApp
 {
     public class Room
     {
+        //класс для комнат с обработчиком его событий
         public RoomEvent Event { get; set; }
         public Room(int eventType)
         {
             Event = (RoomEvent)eventType;
         }
     }
-    enum RoomEvent
+    public enum RoomEvent
     {
+        //вариации возможных объектов, ктр можно встретить в подземке
         Empty,
         Monster,
         Trap,

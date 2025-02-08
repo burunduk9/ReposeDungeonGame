@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DungeonGame.ClassApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,9 @@ namespace DungeonGame
     {
         static void Main(string[] args)
         {
-
+            //запуск
+            Game game = new Game();
+            game.Start();
         }
     }
    
