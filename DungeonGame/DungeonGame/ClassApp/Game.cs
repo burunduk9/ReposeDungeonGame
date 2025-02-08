@@ -67,12 +67,12 @@ namespace DungeonGame.ClassApp
                     }
                 case RoomEvent.Merchant:
                     {
-                        //MeetMerchant();
+                        MeetMerchant();
                         break;
                     }
                 case RoomEvent.Boss:
                     {
-                        //FightBoss();
+                        FightBoss();
                         break;
                     }
                 default:
@@ -132,6 +132,52 @@ namespace DungeonGame.ClassApp
             {
                 Console.WriteLine("Ответ неверный! Сундук остается запертым.");
             }
+        }
+
+        private void MeetMerchant()
+        {
+            Console.WriteLine("Торговец предлагает вам зелье за 30 золотых. Вы хотите его купить? (yes/no)");
+            string response = Console.ReadLine();
+            if (response.ToLower() == "yes" && player.Gold >= 30)
+            {
+                player.Gold -= 30;
+                player.Potions++;
+                Console.WriteLine("Ты купил зелье!");
+            }
+            else
+            {
+                Console.WriteLine("У вас недостаточно золота или вы решили не покупать его.");
+            }
+        }
+
+        private void FightBoss()
+        {
+            Monster boss = new Monster(100);
+            Console.WriteLine("Финальный босс появляется со 100 HP!");
+            while (boss.Health > 0 && player.Health > 0)
+            {
+                Console.WriteLine("Выбери свое оружие: 1 - Меч, 2 - Лук");
+                string choice = Console.ReadLine();
+                if (choice == "1" || (choice == "2" && player.Arrows > 0))
+                {
+                    int damage = choice == "1" ? random.Next(10, 21) : random.Next(5, 16);
+                    if (choice == "2") player.Arrows--;
+                    boss.Health -= damage;
+                    Console.WriteLine($"Ты ранил босса нанеся {damage} урона!");
+                }
+                else
+                {
+                    Console.WriteLine("Ты не можешь использовать лук без стрел!");
+                    continue;
+                }
+                if (boss.Health > 0)
+                {
+                    int bossDamage = random.Next(15, 26);
+                    player.Health -= bossDamage;
+                    Console.WriteLine($"Босс ранил тебя нанеся {bossDamage} урона!");
+                }
+            }
+            if (player.Health > 0) Console.WriteLine("Ты одолел босса!");
         }
 
     }
